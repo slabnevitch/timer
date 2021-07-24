@@ -94,11 +94,16 @@
         }
     };
     if(jQuery('.timer-window__conuter').length > 0){
-        saleTimer(new Date('2021-07-25 21:00:00')).init();
+        saleTimer(new Date(parseISOSimple('2021-07-25 21:00:00'))).init();
         setTimeout(function () {
             jQuery('.timer-window__center').removeClass('hidden_my')
         },1000)
     }
+    function parseISOSimple(s) {
+    	var b = s.split(/\D/);
+    	return new Date(b[0],b[1]-1,b[2],b[3],b[4],b[5]);
+    }
+    
 	</script>
 </body>
 </html>
